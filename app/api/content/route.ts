@@ -1,3 +1,6 @@
+import { getServerSession } from 'next-auth';
+import { NextResponse } from 'next/server';
+
 // Dummy data
 const posts = [
   {
@@ -9,6 +12,9 @@ const posts = [
 ];
 
 export async function GET() {
+
+  const session = await getServerSession();
+  
   return new Response(JSON.stringify(posts), {
     headers: { 'Content-Type': 'application/json' },
   });
