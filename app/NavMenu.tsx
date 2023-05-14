@@ -1,3 +1,5 @@
+import AuthCheck from "@/components/AuthCheck";
+import { SignInButton, SignOutButton } from "@/components/buttons";
 import Link from "next/link";
 // import Image from "next/image";
 
@@ -13,7 +15,7 @@ export default function NavMenu() {
           alt="NextSpace Logo"
         /> */}
       </Link>
-      <ul className="flex">
+      <ul className="flex items-center mx-4">
         <li className="flex items-center h-20">
           <Link className="flex mr-4" href={"/about"}>
             About
@@ -29,6 +31,10 @@ export default function NavMenu() {
             Users
           </Link>
         </li>
+        <SignInButton />
+        <AuthCheck>
+          <SignOutButton />
+        </AuthCheck>
       </ul>
     </nav>
   );
